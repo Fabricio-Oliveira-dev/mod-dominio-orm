@@ -18,4 +18,29 @@ public class Categoria {
 
     @OneToMany(mappedBy = "categoria")
     private List<Atividade> atividades;
+
+    public Categoria(Long id, String descricao) {
+        this.id = id;
+        this.descricao = descricao;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public List<Atividade> getAtividades() {
+        return atividades;
+    }
 }
