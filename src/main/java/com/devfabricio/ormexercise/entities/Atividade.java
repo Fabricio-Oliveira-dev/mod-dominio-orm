@@ -3,6 +3,7 @@ package com.devfabricio.ormexercise.entities;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -24,17 +25,16 @@ public class Atividade {
     private Categoria categoria;
 
     @ManyToMany(mappedBy = "atividades")
-    private Set<Participante> participantes;
+    private Set<Participante> participantes = new HashSet<>();
 
     @OneToMany(mappedBy = "atividade")
     private List<Bloco> blocos = new ArrayList<>();
 
-    public Atividade(Long id, String nome, String descricao, Double preco, Categoria categoria) {
+    public Atividade(Long id, String nome, String descricao, Double preco) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
         this.preco = preco;
-        this.categoria = categoria;
     }
 
     public Long getId() {

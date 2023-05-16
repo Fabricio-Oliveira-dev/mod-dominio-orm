@@ -22,11 +22,10 @@ public class Bloco {
     @JoinColumn(name = "atividade_id")
     private Atividade atividade;
 
-    public Bloco(Long id, Instant inicio, Instant fim, Atividade atividade) {
+    public Bloco(Long id, Instant inicio, Instant fim) {
         this.id = id;
         this.inicio = inicio;
         this.fim = fim;
-        this.atividade = atividade;
     }
 
     public Long getId() {
